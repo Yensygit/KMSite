@@ -12,8 +12,6 @@ def gallery_site(request):
     gallery_photo_list = []
     for i in gallery_photo:
         gallery_photo_list.append(i.upload.name.replace('mainsite/static/gallery/', ''))
-    for i in gallery_photo_list:
-        print(i)
     gallery_photo_dict = {'gallery_photo':gallery_photo_list}
     return render(request, 'mainsite/gallery.html', context=gallery_photo_dict)
 
