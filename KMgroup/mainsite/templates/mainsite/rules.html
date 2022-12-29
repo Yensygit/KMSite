@@ -1,0 +1,78 @@
+{% extends 'mainsite/base.html' %}
+{% load static %}
+{%block in_head%}<link rel="stylesheet" href="{% static 'mainsite/main_style.css' %}">{%endblock%}
+{%block title%}Правила{%endblock%}
+{%block content%}
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(90327668, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/90327668" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<div class="main">
+    <div class="main_inside">
+        <div class="block_heder">
+            <a href="gallery"><div class="heder_text">Галерея</div></a>
+            <a href="/"><div class="heder_text_x">Главная</div></a>
+            <a href="contacts"><div class="heder_text">Контакты</div></a>
+            <a href="price"><div class="heder_text">Цены</div></a>
+            <a href="reviews"><div class="heder_text">Отзывы</div></a>
+            <a href="calendar"><div class="heder_text">Забронировать</div></a>
+            <div class="phone_wa_tg">
+                <div>Тел: 8-988-471-8-571</div>
+                <div class="social">
+                    <a class="social_link_wa" href="https://wa.me/+79884718571"></a>
+                    <a class="social_link_tg" href="https://t.me/+wXDdIQBZ3j5lMDhi"></a>
+                    <a class="social_link_insta" href="https://www.instagram.com/koshki_myishki/"></a>
+                </div>
+            </div>
+        </div>
+        <div class="block_rules">
+            <div class="block_rules_pages">
+                <h1 align="center">Информация для посетителей детского игрового центра «Кошки-мышки»</h1>
+                <p>Уважаемые гости, для того, чтобы  Вы могли провести время в нашем центре с удовольствием, необходимо соблюдать некоторые правила:</p>️
+                <li>Площадка предназначена для детей от 6 месяцев до 7 лет. Сопровождающие ребёнка обязаны находиться с ним на площадке</li>
+                <li>Вход на площадку осуществляется ТОЛЬКО в носках (дети и сопровождающие), без верхней одежды, а так же без крупногабаритных сумок и острых предметов</li>
+                <li>Запрещается детям приносить на площадку деньги и ценные вещи (в т.ч. мобильные телефоны, планшеты и т.д.), а так же оставлять ценные вещи в карманах одежды</li>
+                <li>Сопровождающие гарантируют отсутствие у себя и у ребёнка инфекционных заболеваний</li>
+                <li>Запрещается забирать детей с площадки без уведомления сотрудников. Забрать ребёнка может только тот, кто заполнял договор на оказание услуг центра</li>
+                <li>Лабиринт предназначен для детей старше 4-х лет. Ответственность за детей находящихся в лабиринте несут сопровождающие</li>
+                <li>Запрещается приносить с собой кофе/чай/другие напитки/еду (у нас вы всегда можете приобрести все необходимое). Исключение, если Вы арендуете стол или центр</li>
+                <li>Запрещён вход с животными</li>
+                <li>На территории центра запрещено курить и распивать спиртные напитки</li>
+                <li>Запрещено использовать бенгальские огни и фонтаны</li>
+                <li>Нельзя проявлять агрессивное поведение в отношении своего или постороннего ребенка, других гостей центра или персонала</li>
+                <li>В случае порчи имущества детского игрового центра посетители, совершившие его, обязаны возместить ущерб</li>
+                <p align="center">Вы всегда можете ознакомиться с правилами центра у администратора.</p>
+                <h3 align="center">Ждём Вас в гости!</h3>
+            </div>
+        </div>
+         <div class="block_footer">
+            <div class="footer_link">
+                <a href="gallery"><div class="footer_div">Галерея</div></a>
+                <a href="/"><div class="footer_div_x">Правила</div></a>
+                <a href="price"><div class="footer_div">Цены</div></a>
+                <a href="reviews"><div class="footer_div">Отзывы</div></a>
+            </div>
+            <div class="footer_info">
+                <div>
+                    <p>Контакты:</p>
+                    <p>Адрес : г.Краснодар, ул. Черкасская 113а, 3 этаж</p>
+                    <p>Телефон : 8-988-471-8-571</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

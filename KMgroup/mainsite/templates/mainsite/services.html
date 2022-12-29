@@ -1,0 +1,72 @@
+{% extends 'mainsite/base.html' %}
+{% load static %}
+{%block in_head%}<link rel="stylesheet" href="{% static 'mainsite/main_style.css' %}">{%endblock%}
+{%block title%}Услуги{%endblock%}
+{%block content%}
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(90327668, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/90327668" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<div class="main">
+    <div class="main_inside">
+        {% load static %}
+        <div class="block_heder">
+            <a href="/"><div class="heder_text_x">Главная</div></a>
+            <a href="rules"><div class="heder_text">Правила</div></a>
+            <a href="contacts"><div class="heder_text">Контакты</div></a>
+            <a href="price"><div class="heder_text">Цены</div></a>
+            <a href="reviews"><div class="heder_text">Отзывы</div></a>
+            <a href="calendar"><div class="heder_text">Забронировать</div></a>
+            <div class="phone_wa_tg">
+                <div>Тел: 8-988-471-8-571</div>
+                <div class="social">
+                    <a class="social_link_wa" href="https://wa.me/+79884718571"></a>
+                    <a class="social_link_tg" href="https://t.me/+wXDdIQBZ3j5lMDhi"></a>
+                    <a class="social_link_insta" href="https://www.instagram.com/koshki_myishki/"></a>
+                </div>
+            </div>
+        </div>
+        <div class="block_gallery">
+            {% for photo in gallery_photo%}
+            <div class="gallery_photo"><a href="#popup_photo"><img class="gallery_image" src="{% get_static_prefix %}gallery/{{ photo }}"></a></div>
+            <div id="#popup_photo" class="popup_photo">
+                <div class="popup__body_photo">
+                    <div class="popup__content_photo">
+                        <a href="" class="popup__close_photo">X</a>
+                        <img src="{% get_static_prefix %}gallery/{{ photo }}">
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+        <div class="block_footer">
+            <div class="footer_link">
+                <a href="/"><div class="footer_div_x">Главная</div></a>
+                <a href="rules"><div class="footer_div">Правила</div></a>
+                <a href="price"><div class="footer_div">Цены</div></a>
+                <a href="reviews"><div class="footer_div">Отзывы</div></a>
+            </div>
+            <div class="footer_info">
+                <div>
+                    <p>Контакты:</p>
+                    <p>Адрес : г.Краснодар, ул. Черкасская 113а</p>
+                    <p>Телефон : 8-988-471-8-571</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

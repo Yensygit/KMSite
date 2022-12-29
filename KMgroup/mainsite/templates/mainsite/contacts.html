@@ -1,0 +1,84 @@
+{% extends 'mainsite/base.html' %}
+{% load static %}
+{%block in_head%}<link rel="stylesheet" href="{% static 'mainsite/main_style.css' %}">{%endblock%}
+{%block title%}Контакты{%endblock%}
+{%block content%}
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(90327668, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/90327668" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<div class="main">
+    <div class="main_inside_contacts">
+    <div class="block_heder">
+        <a href="gallery"><div class="heder_text">Галерея</div></a>
+        <a href="rules"><div class="heder_text">Правила</div></a>
+        <a href="/"><div class="heder_text_x">Главная</div></a>
+        <a href="price"><div class="heder_text">Цены</div></a>
+        <a href="reviews"><div class="heder_text">Отзывы</div></a>
+        <a href="calendar"><div class="heder_text">Забронировать</div></a>
+        <div class="phone_wa_tg">
+            <div>Тел: 8-988-471-8-571</div>
+            <div class="social">
+                <a class="social_link_wa" href="https://wa.me/+79884718571"></a>
+                <a class="social_link_tg" href="https://t.me/+wXDdIQBZ3j5lMDhi"></a>
+                <a class="social_link_insta" href="https://www.instagram.com/koshki_myishki/"></a>
+            </div>
+        </div>
+    </div>
+    <div class="block_contacts_pages">
+        <div class="adress_worktime">
+            <div class="schedule" align="center">
+                <h1>Время работы:</h1>
+                <p>Понедельник: с 12:30 до 21:00</p>
+                <p>Вторник: с 10:00 до 21:00</p>
+                <p>Среда: с 10:00 до 21:00</p>
+                <p>Четверг: с 10:00 до 21:00</p>
+                <p>Пятница: с 10:00 до 21:00</p>
+                <p class="color_p">Суббота: с 10:00 до 21:00</p>
+                <p class="color_p">Воскресенье: с 10:00 до 21:00</p>
+            </div>
+            <div align="center">
+                <h1>Контакты:</h1>
+                <p>Адрес: г.Краснодар</p>
+                <p> ул. Черкасская 113а, 3 этаж</p>
+                <p>Телефон: 8-988-471-8-571</p>
+            </div>
+        </div>
+            <h1 align="center">Как к нам добраться:</h1>
+        <div class="maps">
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1e666aa051e66e19da52fb0e28fe0b91c1faa262c86b6aa4f3a8978a2db1866a&amp;width=100%&amp;height=80%&amp;lang=ru_RU&amp;scroll=true"></script>
+        </div>
+    </div>
+         <div class="block_footer">
+            <div class="footer_link">
+                <a href="gallery"><div class="footer_div">Галерея</div></a>
+                <a href="rules"><div class="footer_div">Правила</div></a>
+                <a href="price"><div class="footer_div">Цены</div></a>
+                <a href="reviews"><div class="footer_div">Отзывы</div></a>
+            </div>
+            <div class="footer_info">
+                <div>
+                    <p>Контакты:</p>
+                    <p>Адрес : г.Краснодар, ул. Черкасская 113а, 3 этаж</p>
+                    <p>Телефон : 8-988-471-8-571</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {%block in_head%}{%endblock%}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title>
+</head>
+<body class="body">
+<div class="main">
+    <div class="main_inside_contacts">
+    <div class="block_heder">
+        <a href="services"><div class="heder_text">Услуги</div></a>
+        <a href="rules"><div class="heder_text">Правила</div></a>
+        <a href="/"><div class="heder_text_x">Главная</div></a>
+        <a href="price"><div class="heder_text">Цены</div></a>
+        <a href="reviews"><div class="heder_text">Отзывы</div></a>
+        <div class="phone_wa_tg">
+            <div>Тел: 8-988-471-8-571</div>
+            <div class="social">
+                <a class="social_link_wa" href="https://wa.me/+79884718571"></a>
+                <a class="social_link_tg" href="https://t.me/+wXDdIQBZ3j5lMDhi"></a>
+                <a class="social_link_insta" href="https://www.instagram.com/koshki_myishki/"></a>
+            </div>
+        </div>
+    </div>
+{%block content%}{%endblock%}
+    <div class="block_footer">
+        <div class="footer_link">
+            <a href="services"><div class="footer_div">Услуги</div></a>
+            <a href="/"><div class="footer_div_x">Главная</div></a>
+            <a href="price"><div class="footer_div">Цены</div></a>
+            <a href="reviews"><div class="footer_div">Отзывы</div></a>
+        </div>
+        <div class="footer_info">
+            <div>
+                <p>Контакты:</p>
+                <p>Адрес : г.Краснодар, ул. Черкасская 113а</p>
+                <p>Телефон : 8-988-471-8-571</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>

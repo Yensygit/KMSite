@@ -1,0 +1,135 @@
+{% extends 'mainsite/base.html' %}
+{% load static %}
+{%block in_head%}<link rel="stylesheet" href="{% static 'mainsite/main_style.css' %}">{%endblock%}
+{%block title%}Забронировать{%endblock%}
+{%block content%}
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(90327668, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/90327668" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<div class="main">
+    <div class="main_inside">
+        {% load static %}
+        <div class="block_heder">
+            <a href="gallery"><div class="heder_text">Галерея</div></a>
+            <a href="rules"><div class="heder_text">Правила</div></a>
+            <a href="contacts"><div class="heder_text">Контакты</div></a>
+            <a href="price"><div class="heder_text">Цены</div></a>
+            <a href="reviews"><div class="heder_text">Отзывы</div></a>
+            <a href="/"><div class="heder_text_x">Главная</div></a>
+            <div class="phone_wa_tg">
+                <div>Тел: 8-988-471-8-571</div>
+                <div class="social">
+                    <a class="social_link_wa" href="https://wa.me/+79884718571"></a>
+                    <a class="social_link_tg" href="https://t.me/+wXDdIQBZ3j5lMDhi"></a>
+                    <a class="social_link_insta" href="https://www.instagram.com/koshki_myishki/"></a>
+                </div>
+            </div>
+        </div>
+        <div class="calendar_block">
+            <h2>График закрытых мероприятий:</h2>
+            <a class="reserv_day" href="#popup">Забронировать День Рождения</a>
+            {% for month_name in name_month%}
+                {% if month_name.number == month %}
+                    <h2 class="name_month">{{month_name.name}}</h2>
+                {% endif %}
+            {% endfor %}
+            <div class="calendar_block_flex">
+                <form class="form" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="year" value="{{year}}">
+                    <button class="button_previous_month" type="submit" name="previous_month" value="{{month}}"></button>
+                </form>
+                <form class="form" method="post">
+                    <div class="calendar">
+                        {% for i in cal %}
+                            <a class="info_day">
+                                <div class="calendar_child">
+                                    {% load filter %}
+                                    <div class="date_inside">
+                                    {% for day in name_day %}
+                                        {% if day.number == i|isoweekday %}
+                                            <font class="name_weekday"> {{day.name}}</font>
+                                        {% endif %}
+                                    {% endfor %}
+                                    {{i.day}}.{{i.month}}.{{i.year}}</div>
+                                    {% for j in hb %}
+                                        {% if i == j.date_birthday %}
+                                            <p class="hb">{{j.time_birthday_start}}-{{j.time_birthday_end}}</p>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </form>
+                <form class="form" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="year" value="{{year}}">
+                    <button class="button_next_month" type="submit" name="next_month" value="{{month}}"></button>
+                </form>
+            </div>
+            <div id="popup" class="popup">
+                <div class="popup__body">
+                    <div class="popup__content">
+                        <a href="" class="popup__close">X</a>
+                        <div class="popup__title" >
+                            <font class="name_weekday">Забронировать дату и время:</font>
+                            <p>Информация о бронировании предварительная, поскольку на площадке так же могут проходить открытые праздники.
+Вам перезвонит администратор и обсудит точное время</p>
+                        </div>
+                        <form method="post" style="text-align:center;">
+                            <div class="popup__text">
+                                {% csrf_token %}
+                                <div class="popup_div">
+                                    <div><font class="name_weekday">Укажите желаемую дату:</font></div>
+                                    <input class="value_popup" type="date" name="select_date" required>
+                                </div>
+                                <div class="popup_div">
+                                    <div><font class="name_weekday">Укажите желаемое время:</font></div>
+                                    <select class="value_popup" name="select_time" required>
+                                      <option value="10:00">10:00</option>
+                                      <option value="14:00">14:00</option>
+                                      <option value="18:00">18:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="popup_input_wa" type="submit" name="social" value="wa">WhatsApp</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="block_footer">
+            <div class="footer_link">
+                <a href="gallery"><div class="footer_div">Галерея</div></a>
+                <a href="rules"><div class="footer_div">Правила</div></a>
+                <a href="price"><div class="footer_div">Цены</div></a>
+                <a href="reviews"><div class="footer_div">Отзывы</div></a>
+            </div>
+            <div class="footer_info">
+                <div>
+                    <p>Контакты:</p>
+                    <p>Адрес : г.Краснодар, ул. Черкасская 113а, 3 этаж</p>
+                    <p>Телефон : 8-988-471-8-571</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+
+
